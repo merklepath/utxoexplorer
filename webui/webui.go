@@ -1,6 +1,7 @@
 package webui
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 	"path"
@@ -14,6 +15,7 @@ func RenderIndex(w http.ResponseWriter, r *http.Request) {
 	tmplPath := path.Join(TemplatesDir, "index.gohtml")
 	tmpl, err := template.ParseFiles(tmplPath)
 	if err != nil {
+		fmt.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
@@ -25,6 +27,7 @@ func RenderIndex(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
+		fmt.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 	}
 }

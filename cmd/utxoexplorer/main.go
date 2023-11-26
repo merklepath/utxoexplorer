@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/merklepath/utxoexplorer/static"
+	"github.com/merklepath/utxoexplorer/webui"
 )
 
 func main() {
