@@ -1,2 +1,4 @@
 .devenv/
 *.sw*
+static/css/
+static/js/
