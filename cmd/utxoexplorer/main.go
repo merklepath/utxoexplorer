@@ -4,10 +4,13 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/merklepath/utxoexplorer/static"
 )
 
 func main() {
 	// Initialize the router
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.FS(static.Static))))
 	http.HandleFunc("/", indexHandler)
 
 	// Start the server
