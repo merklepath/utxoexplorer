@@ -1,8 +1,20 @@
 {{ define "header" }}
-<header class="bg-gray-800">
-    <nav class="container mx-auto flex justify-between">
-        <h1 class="text-white text-xl">{{ .Title }}</h1>
-        <!-- ... navigation links ... -->
+<header class="">
+<nav class="bg-gray-100 p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <h1 class="text-3xl font-bold">Bitcoin Explorer</h1>
+	    <span class="text-sm text-right">by MerklePath</span>
+        </div>
+        <div class="flex-grow flex items-center justify-center space-x-4">
+            <a href="#" class="font-mono hover:underline hover:text-white hover:bg-blue-500 hover:decoration-dotted nav-link">Blocks</a>
+            <a href="#" class="font-mono hover:underline hover:text-white hover:bg-blue-500 hover:decoration-dotted nav-link">Transactions</a>
+            <a href="#" class="font-mono hover:underline hover:text-white hover:bg-blue-500 hover:decoration-dotted nav-link">Addresses</a>
+            <a href="#" class="font-mono hover:underline hover:text-white hover:bg-blue-500 hover:decoration-dotted nav-link">Stats</a>
+        </div>
+        <div class="flex items-center">
+            <input type="text" placeholder="Address, transaction ID, block hash..." class="flex-grow px-4 py-2 border border-gray-300 rounded-l">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600">Search</button>
+        </div>
     </nav>
 </header>
 {{ end }}
